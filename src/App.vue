@@ -25,6 +25,12 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 
 export default {
+  metaInfo() {
+        return { 
+            title: "EECS 351 Final Project | Drum Isolation",
+            
+        }
+    },
   name: 'App',
 
   components: {
