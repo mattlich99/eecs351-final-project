@@ -1,12 +1,12 @@
 
 <template>
-  <div class="about">
+  <v-container>
     <h1>Our Squad</h1>
     <Profile/>
      <Profile/>
       <Profile/>
        <Profile/>
-  </div>
+  </v-container>
 </template>
 
 <script>

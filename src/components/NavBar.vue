@@ -13,7 +13,7 @@
         
         />
         <div class="d-flex align-center">
-        <h2 class="home-title">EECS 351 Final Project</h2>
+        <h2 class="white--text font-weight-regular">EECS 351 Final Project</h2>
         </div>
         </div>
         </router-link>
@@ -65,10 +65,3 @@
 
       </v-container>
       </template>
-
-      <style scoped>
-.home-title {
-  color:white;
-  font-weight: 200;
-}
-        </style>

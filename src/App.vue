@@ -9,9 +9,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container>
       <router-view></router-view>
-      </v-container>
     </v-main>
 
     <v-footer dark>
@@ -38,11 +36,3 @@ export default {
 };
 </script>
 
-<style>
-.center-text {
-  text-align:center;
-}
-.padding-20 {
-  padding:20px 10px;
-}
-</style>
