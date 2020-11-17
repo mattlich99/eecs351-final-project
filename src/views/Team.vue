@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import Profile from '../components/Team/Profile';
+  import Profile from '../components/Profile';
 export default {
 
 
