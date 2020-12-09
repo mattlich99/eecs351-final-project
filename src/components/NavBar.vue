@@ -20,7 +20,7 @@
       </router-link>
 
       <v-spacer></v-spacer>
-      <v-menu open-on-hover bottom offset-y>
+      <v-menu open-on-click bottom offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             color="primary"
@@ -28,21 +28,29 @@
             v-bind="attrs"
             depressed
             class="hidden-sm-and-down"
+            :ripple="false"
             v-on="on"
           >
-            Final Report
+            Project Overview
           </v-btn>
         </template>
 
-        <v-list>
-          <v-list-item v-for="(item, index) in items" :key="index">
+        <v-list class="pa-0">
+          <v-list-item
+            v-for="(item, index) in items"
+            :key="index"
+            :to="item.to"
+          >
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
 
       <v-btn text to="/data" class="hidden-sm-and-down">
-        <span>Data</span>
+        <span>More Data</span>
+      </v-btn>
+      <v-btn text to="/data" class="hidden-sm-and-down">
+        <span>Code</span>
       </v-btn>
       <v-btn text to="/team" class="hidden-sm-and-down">
         <span>Our Team</span>
@@ -52,21 +60,23 @@
         <span>Archive</span>
       </v-btn>
 
-      <v-menu open-on-click bottom offset-y>
+      <!--START MOBILE LIST-->
+      <v-menu open-on-click bottom offset-y min-width="100%" tile>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             color="primary"
             v-bind="attrs"
             icon
+            x-large
             class="hidden-md-and-up"
             v-on="on"
           >
             <v-icon light color="white"> mdi-menu </v-icon>
           </v-btn>
         </template>
-        <v-list>
+        <v-list class="text-center py-0">
           <v-list-item to="/">
-            <v-list-item-title>Final Report</v-list-item-title>
+            <v-list-item-title>Project Overview</v-list-item-title>
           </v-list-item>
           <v-list-item to="/data">
             <v-list-item-title>Data</v-list-item-title>
@@ -84,14 +94,28 @@
 </template>
 
 <script>
+import smoothscroll from 'smoothscroll-polyfill'
 export default {
   data: () => ({
     items: [
-      { title: 'Introduction' },
-      { title: 'Click Me' },
-      { title: 'Click Me' },
-      { title: 'What We Learned' }
+      { title: 'Introduction', to: '/#intro' },
+      { title: 'Creating Reference Samples', to: '/#reference-samples' },
+      { title: 'Identification Algorithms', to: '/#algorithms' },
+      { title: 'What We Learned', to: '/#learned' },
+      { title: 'Conclusion', to: '/#conclusion' }
     ]
-  })
+  }),
+  methods: {
+    scrollTo() {
+      smoothscroll.polyfill()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
 }
 </script>
+
+<style scoped>
+* {
+  /* border: 1px solid black; */
+}
+</style>

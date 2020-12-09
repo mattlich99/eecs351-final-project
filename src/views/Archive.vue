@@ -2,6 +2,14 @@
   <v-container>
     <div class="flex-column justify-center align-center">
       <div class="text-center mt-8 mb-15">
+        <h1 class="text-center mb-5">Project Gantt Chart</h1>
+        <div class="d-flex justify-space-around align-center">
+          <v-img src="../assets/ganttChart.png"></v-img>
+        </div>
+      </div>
+
+      <v-divider color="black"></v-divider>
+      <div class="text-center mt-8 mb-15">
         <h1 class="text-center mb-5">(11/17/2020) Team Progress Report</h1>
         <div class="d-flex justify-space-around align-center">
           <iframe

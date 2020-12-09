@@ -1,110 +1,116 @@
 <template>
   <v-container>
-    <v-row class="justify-center font-weight-bold text-h4 mt-6"
-      ><div>Theory we used</div></v-row
-    >
-    <v-row class="mb-16 mt-4 justify-space-between">
-      <v-dialog
-        v-for="(modal, index) in modals"
+    <h1 class="mt-5 text-decoration-underline">All Drum Component Samples</h1>
+    <v-row class="mt-6">
+      <v-col
+        v-for="(image, index) in subImages"
         :key="index"
-        v-model="dialog"
-        width="500"
+        lg="6"
+        cols="12"
+        class="d-flex align-center flex-column my-5 pa-0"
       >
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">
-            {{ modal.title }}
-          </v-btn>
-        </template>
-
-        <v-card>
-          <v-card-title class="headline grey lighten-2">
-            Privacy Policy
-          </v-card-title>
-
-          <v-card-text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </v-card-text>
-
-          <v-divider></v-divider>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="dialog = false">
-              I accept
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
+        <h1 class="text-center text-h5">{{ image.title }}</h1>
+        <div class="d-flex align-center align-md-start flex-column">
+          <v-img
+            :max-width="ImageWidth"
+            :src="require('@/assets/' + image.name + '')"
+            style="border: 1px solid black; max-height: 375px"
+            class="flex-grow-0"
+          ></v-img>
+          <div style="max-width: 480px" class="mt-3 flex-grow-1 px-3">
+            {{ image.text }}
+          </div>
+        </div>
+      </v-col>
     </v-row>
-    <h1 class="text-center">Crash Cymbal Data</h1>
-
-    <div class="flex-column">
-      <DataPlot
-        :data-title="titles[0]"
-        :data-description="descriptions[0]"
-        :image-name="images[0]"
-      />
-      <DataPlot
-        :data-title="titles[1]"
-        :data-description="descriptions[1]"
-        :image-name="images[1]"
-      />
-      <DataPlot
-        :data-title="titles[2]"
-        :data-description="descriptions[2]"
-        :image-name="images[2]"
-        :img-width="1000"
-      />
-    </div>
   </v-container>
 </template>
 
 <script>
-import DataPlot from '../components/DataPlot'
-
 export default {
   name: 'Data',
-
-  components: {
-    DataPlot
-  },
-
   data: () => ({
     modals: [
       {
         title: 'Fast Fourier Transform'
       },
-      {
-        title: 'Matched Filtering'
-      },
+
       {
         title: 'Cross Correlation'
       },
       {
-        title: 'Difference Percent'
+        title: 'Matched Filtering'
       }
     ],
-    titles: [
-      'Magnitude FFTs using eight different samples vs. Crash Cymbal Frequency.',
+    subImages: [
+      {
+        title: 'Snare Drum Samples',
+        name: 'Snare_Sub.jpg',
+        text:
+          'A snare drum when played has a low sharp sound. This low sound is represented in the fourier domain by large magnitudes in the lower frequency range, while the sharpness of the sound is represented in the mid range frequencies. This is seen in the plots of different snare drum samples as a large spike at low frequencies and with a wide range of small magnitudes throughout the mid frequency range entering into the high frequency range.  '
+      },
+      {
+        title: 'Averaged Snare Drum Reference Sample',
+        name: 'Snare_Average.jpg',
+        text:
+          'Taking many different samples of a snare drum and combining them into a single average results in a general representation of what a snare drum sample would look like when plotted in the fourier domain. The average signal maintains the characteristics of the individual plots, notably the large spike visible in the low frequency range, and a smear of various magnitudes in the mid range frequencies and entering into the high frequency range.'
+      },
+      {
+        title: 'High Hat Samples',
+        name: 'HighHat_Sub.png',
+        text:
+          'The hi hat creates a very shimmery type of sound that exists in the mid and high range of frequencies. This sound is represented by a large range of magnitudes over a large set of frequencies. This is seen in the plot as a smear in the shape of a hump or gaussian curve of magnitudes over the mid and high range of frequencies.'
+      },
+      {
+        title: 'Averaged High Hat Reference Sample',
+        name: 'HighHat_Average.jpg',
+        text:
+          'Taking many different samples of a hi hat and combining them into a single average results in a representation of what any crash cymbal may look like. The average contains the characteristics of the hi hat, notably the broad range of magnitudes over a large range frequency. The shape created by this, the hump or almost gaussian shape, is what most high hats look like when plotted in the frequency domain.'
+      },
+      {
+        title: 'Kick Drum Samples',
+        name: 'Kick_Sub.png',
+        text:
+          'The Kick Drum is personified by three major characteristics, all of which are displayed in the given samples. Firstly, the bass drum operates on a lower frequency range than any of the other given instruments. Secondly, the magnitude of the kick drum is much higher at the lower frequencies than the other instruments. Lastly, there is less echo than the other drum kit components, meaning that the magnitude of the fast fourier transform of the kick drum is much less at higher frequencies than the other bass drum components. All of these characteristics lead to possible methods of identifying the kick drum, either by its unique shape (average filter) and/or a low pass filter. Each of these methods will be explained in more detail in the later sections.'
+      },
+      {
+        title: 'Averaged Kick Drum Reference Sample',
+        name: 'Kick_Average.png',
+        text:
+          ' As the viewer can see, we expect the magnitude of the bass drum to be larger. Therefore, we now know that the averaging algorithm may not give us exact expected results when placed in the match filter. Specifically for the bass drum comes the question of how useful is an average filter when identifying this instrument. Since the bass drum is characterized by a large impulse at low frequencies, we can put our test signal through a low pass filter and see if the signal passes through a threshold. In our implementation of the algorithm, we will explore using a low pass filter on the average filter result. '
+      },
+      {
+        title: 'Cymbal Samples',
+        name: 'Cymbal_Sub.png',
+        text:
+          'The crash cymbal has an abrupt, loud, crashing sound.  After the cymbal is hit, its sound lingers for longer than the hi hat.  In the frequency domain, the crash cymbal has relatively low frequency peaks in addition to high frequency peaks.  The peaks occur for very small ranges of frequencies and they tend to be more concentrated at lower frequencies than the hi hat.'
+      },
+      {
+        title: 'Averaged Cymbal Reference Sample',
+        name: 'Cymbal_Average.png',
+        text:
+          'When we average together multiple crash cymbals, the result still has the same general shape as individual crash cymbals but now the peaks are smaller compared to the average magnitude of the signal.  The averaged signal has a much smaller magnitude at higher frequencies than some of the original signals.  The exponential decay of magnitude at higher frequencies is lost.  '
+      }
+    ]
+  }),
+  computed: {
+    ImageWidth() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return '300px'
+        case 'lg':
+          return '550px'
 
-      'Average Magnitude FFT using eight different samples vs Crash Cymbal Frequency',
-
-      'Similarity of different audio files'
-    ],
-    descriptions: [
-      'Plotted above are eight crash cymbals which mostly share the same features. Generally there is the first peak around 500 Hz and then the largest peak is between 3 and 4 kHz. After the peak around 5 kHz, the magnitude decays close to 0 by 18 kHz. CrashCymbal4.wav seems to have been compressed because all its magnitudes above 5 kHz are 0. A song could contain compressed or distorted instruments so it will be interesting to see if our code will be able to identify a compressed instrument’s sound as the original instrument.',
-
-      'The averaged plot of the crash cymbals seems to have lost some of its detail but it is a good representation of all the crash cymbals. The exponential decrease is lost but the peaks are still spaced with a group around 500 Hz and the largest peak is at 3128 Hz. We may end up using the averaged plot to identify some instruments but use the original plots for others depending on how accurate the results are with the different methods.',
-
-      'Our first idea to identify an instrument is to use a matched filter. The match filter consists of multiplying the signal whose instrument we are trying to identify with signals which we know the instrument for in the frequency domain. We can then sum up the answer and compare the summation to the summation of the sum of the original signal times itself. The code adjusts for differences in the magnitudes of the two inputs so changing the volume of the signal will not change the result. This chart shows the similarity measured by by this method of two clips of each instrument. The similarity between two identical audios is 1, and the further from 1 the value, the bigger the difference. The two high hats are the most similar and for every instrument other than the snare drum, the two instruments are more similar than almost every other instrument. Moving forward we will use different methods to compare signals, use different kinds of filters before measuring the similarity of audio, and run the program on larger sets of data.'
-    ],
-    images: ['CymbalPlots.png', 'AverageCymbal.png', 'MatchFilter.png']
-  })
+        default:
+          return '500px'
+      }
+    }
+  }
 }
 </script>
+
+<style scoped>
+* {
+  /* border: 1px solid black; */
+}
+</style>
