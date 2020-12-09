@@ -22,7 +22,7 @@
 
       <v-divider color="black"></v-divider>
 
-      <div class="text-center mt-8 mb-15">
+      <div class="text-center mt-8 mb-8">
         <h1 class="text-center mb-5">
           (11/6/2020) Initial Team Report and Video
         </h1>
@@ -43,7 +43,34 @@
             src="https://docs.google.com/document/d/e/2PACX-1vTDP8lL0RMcpOdj_5ojnEc-VR02PWb9hASGOUKgE8y1t6Efw4I6Dwex_YkpMmOitMoiq4RNkS0u77aG/pub?embedded=true"
           ></iframe>
         </div>
+        <v-divider color="black"></v-divider>
       </div>
+
+      <div class="text-h4 mb-4">Sources</div>
+      <ul>
+        <li>
+          <a
+            hre="https://sound.media.mit.edu/Papers/kdm-phdthesis.pdf"
+            target="_blank"
+            >MIT Audio DSP Report</a
+          >
+        </li>
+        <li>
+          <a
+            style="text-decoration: none"
+            href="https://okgo.net/"
+            target="_blank"
+          >
+            OKGO</a
+          >
+        </li>
+      </ul>
     </div>
   </v-container>
 </template>
+
+<style scoped>
+* {
+  /* border: 1px solid black; */
+}
+</style>

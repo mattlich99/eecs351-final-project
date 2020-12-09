@@ -12,14 +12,18 @@
         <div class="mt-5" style="font-size: 17px">
           <p>
             The following plot is the averaged snare drum reference sample,
-            created from the 8 samples plotted aboce. The function that created
+            created from the 8 samples plotted above. The function that created
             these can be found in our
-            <router-link to="/code">code page</router-link> along with the rest
-            of the algorithms we used for this project. Since MATLAB is unable
-            to add arrays of different lengths, our averager function made use
-            of MATLAB's native "imresize" function, which takes each signal in
-            the array and resizes it to the size of the smallest signal while
-            minimizing data loss in the process.
+            <a
+              href="https://drive.google.com/file/d/14S-Mbrtf1KDl4rEL7fcUKQaQLkugka1t/view?usp=sharing"
+              target="_blank"
+              >code page</a
+            >
+            along with the rest of the algorithms we used for this project.
+            Since MATLAB is unable to add arrays of different lengths, our
+            averager function made use of MATLAB's native "imresize" function,
+            which takes each signal in the array and resizes it to the size of
+            the smallest signal while minimizing data loss in the process.
           </p>
           The reason we averaged these 8 signals is because we wanted to have a
           good reference to ideally use in any type of track, since there are so
@@ -43,7 +47,7 @@
         ></v-img>
         <div
           class="text-center text-lg-left"
-          style="width: 83%; font-size: 14px"
+          style="width: 80%; font-size: 14px"
         >
           <i> Figure 2: Averaged Snare Drum Reference Sample </i>
         </div>

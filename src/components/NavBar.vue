@@ -27,7 +27,7 @@
             dark
             v-bind="attrs"
             depressed
-            class="hidden-sm-and-down"
+            class="hidden-md-and-down"
             :ripple="false"
             v-on="on"
           >
@@ -46,17 +46,22 @@
         </v-list>
       </v-menu>
 
-      <v-btn text to="/data" class="hidden-sm-and-down">
+      <v-btn text to="/data" class="hidden-md-and-down">
         <span>More Data</span>
       </v-btn>
-      <v-btn text to="/data" class="hidden-sm-and-down">
-        <span>Code</span>
-      </v-btn>
-      <v-btn text to="/team" class="hidden-sm-and-down">
+      <a
+        href="https://drive.google.com/file/d/14S-Mbrtf1KDl4rEL7fcUKQaQLkugka1t/view?usp=sharing"
+        target="_blank"
+      >
+        <v-btn text class="hidden-md-and-down">
+          <span>Code</span>
+        </v-btn></a
+      >
+      <v-btn text to="/team" class="hidden-md-and-down">
         <span>Our Team</span>
       </v-btn>
 
-      <v-btn text to="/archive" class="hidden-sm-and-down">
+      <v-btn text to="/archive" class="hidden-md-and-down">
         <span>Archive</span>
       </v-btn>
 
@@ -68,7 +73,7 @@
             v-bind="attrs"
             icon
             x-large
-            class="hidden-md-and-up"
+            class="hidden-lg-and-up"
             v-on="on"
           >
             <v-icon light color="white"> mdi-menu </v-icon>
@@ -81,6 +86,15 @@
           <v-list-item to="/data">
             <v-list-item-title>Data</v-list-item-title>
           </v-list-item>
+          <a
+            href="https://drive.google.com/file/d/14S-Mbrtf1KDl4rEL7fcUKQaQLkugka1t/view?usp=sharing"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <v-list-item>
+              <v-list-item-title>Code</v-list-item-title>
+            </v-list-item></a
+          >
           <v-list-item to="/team">
             <v-list-item-title>Team</v-list-item-title>
           </v-list-item>

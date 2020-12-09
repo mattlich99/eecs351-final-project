@@ -23,6 +23,13 @@
         </div>
       </v-col>
     </v-row>
+    <h1 class="mt-5 text-decoration-underline">Full Cross Correlation Data</h1>
+    <v-row no-gutters class="mt-6"
+      ><v-img
+        max-width="900px"
+        src="../assets/fullCrossCorrelation.jpg"
+      ></v-img>
+    </v-row>
   </v-container>
 </template>
 

@@ -55,10 +55,16 @@
           and could only identify the correct drum component 30% of the time. To
           improve this accuracy, we used a low pass filter on the snare and kick
           drum average filter to obtain more accurate data specific to those
-          instruments, increasing our overall accuracy to around 40%. However,
-          this was still too low for our liking, leading us to try using cross
-          correlation (described in the next section) before we went back to a
-          revised version of matched filtering.
+          instruments. The reason why the low pass filter would yield more
+          accurate data for the snare and kick drums is because both of those
+          drum kit components operate on a lower frequency spectrum than the
+          other instruments. Using the low pass filter on the test signal
+          alleviates high frequency noise that leads less accurate data when
+          compared to the snare and the kick drum. Including this filter
+          increased our overall accuracy to around 40%. However, this was still
+          too low for our liking, leading us to try using cross correlation
+          (described in the next section) before we went back to a revised
+          version of matched filtering.
         </p>
       </div>
     </v-row>
@@ -66,12 +72,12 @@
       color="red lighten-2"
       dark
       :ripple="false"
-      class="mt-5 mb-4"
+      class="mt-1 mb-10"
       @click="dialog = true"
     >
       What is Matched Filtering?
     </v-btn>
-    <div class="d-flex flex-column align-center my-5">
+    <div class="d-flex flex-column align-center mb-8 mt-2">
       <v-img max-width="100%" src="../assets/MatchedFilter1.png"></v-img>
       <div style="font-size: 14px">
         <i>

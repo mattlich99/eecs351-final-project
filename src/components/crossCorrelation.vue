@@ -6,10 +6,10 @@
     <v-row no-gutters>
       <div class="mt-6 text-justify" style="font-size: 17px">
         <p>
-          Because, cross correlation is a way to measure the similarity of two
-          signals, so we tried to calculate the cross correlation of a known
-          audio file with an unknown audio file to see what instrument it is
-          closest to. Interestingly, when the audio from an instrument is cross
+          Because cross correlation is a way to measure the similarity of two
+          signals, we tried to calculate the cross correlation of a known audio
+          file with an unknown audio file to see what instrument it is closest
+          to. Interestingly, when the audio from an instrument is cross
           correlated with different audio from the same instrument, the result
           is more or less symmetrical about 0, as shown in the plots on the
           left. This is because the cross correlation of a signal with itself is
@@ -18,20 +18,23 @@
         </p>
         <p>
           When two different instruments are cross correlated, the result is
-          very asymmetrical about 0, as shown in the plots on the right. We
-          tried to use this as a test to see what instrument is being played,
-          but unfortunately, when multiple instruments are being played
+          very asymmetrical about 0, as shown in the plots below. We tried to
+          use this as a test to see what instrument is being played, but
+          unfortunately, when multiple instruments are being played
           simultaneously, the pattern no longer holds. If we had more time we
           could create code that would first split the incoming signal into
           different instruments and then work on identifying the split up
-          signals.
+          signals. Because of this issue, we returned to matched filtering to
+          try and increase the accuracy of our first attempt.<br />*If you'd
+          like to see more cross correlation data, see our
+          <router-link to="/data"> More Data</router-link> page.
         </p>
       </div>
       <v-btn
         color="red lighten-2"
         dark
         :ripple="false"
-        class="mt-5 mb-4"
+        class="mt-1 mb-10"
         @click="dialog = true"
       >
         What is Cross Correlation?

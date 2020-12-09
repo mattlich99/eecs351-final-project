@@ -15,7 +15,7 @@
           seen to the right with the snare drum's data (for the rest of the
           report, we will be referencing the snare data for brevity; if you'd
           like to see data for the other 3 instruments, please visit the
-          <router-link to="/data"> More Data</router-link> tab, where the snare
+          <router-link to="/data"> More Data</router-link> page, where the snare
           data is present as well). As we can see in the following subplot,
           there are some key characteristics to the snare drum that we used in
           our identification algorithms to differentiate it from the other drum

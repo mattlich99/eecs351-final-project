@@ -7,16 +7,17 @@
       <div class="text-justify" style="font-size: 17px">
         <p>
           The second iteration of the match filtering algorithm uses the
-          structure of the initial with some improvements. In creating the
-          second match filtering algorithm we changed the way the results were
-          generated, but the methodology for generating the results remained the
-          same. Initially, our algorithm calculated the minimum of the 4
-          "quality factors" generated from the know
-          <span style="background: yellow">
-            the input signal we were comparing. What our algorithm did was take
-            the minimum</span
-          >
-          TALK ABOUT LOW PASS FILTER
+          structure of the initial with some improvements. As mentioned in the
+          section detailing our first attempt at matched filtering, our
+          algorithm initially calculated the minimum of the "quality factors"
+          generated from the comparison between the input signal and the known
+          reference signals. This value realistically means nothing, and we
+          determined that we actually needed to compute the distance that each
+          quality factor was from 1, and then take the minimum of those values.
+          After making this change to the algorithm (and keeping the low pass
+          filter included, as it still gave us a net positive accuracy
+          increase), we saw our component identification accuracy jump
+          immensely, as displayed below in the spreadsheet.
         </p>
         <p>
           The given spreadsheet displays combined human and computer-based
@@ -37,12 +38,12 @@
         <p>
           Overall for the whole drum stem, we got 141 correct predictions out of
           202 seconds of samples. This made for an overall accuracy of 69.8%,
-          MUCH better than the 40% we were originally getting on our first try
-          with this algorithm. One may notice that there are some discrepancies
-          in the data, particularly in sections 69-89, where the hi-hat was in
-          fact played, but the drummer used the foot pedal for the hi-hat. We
-          did not test for this possibility, which led to some incorrect
-          predictions. The section 120-150 is also a source of major
+          <i>much</i> better than the 40% we were originally getting on our
+          first try with this algorithm. One may notice that there are some
+          discrepancies in the data, particularly in sections 69-89, where the
+          hi-hat was in fact played, but the drummer used the foot pedal for the
+          hi-hat. We did not test for this possibility, which led to some
+          incorrect predictions. The section 120-150 is also a source of major
           discrepancies, as the toms, a drum kit component we did not test for,
           was played almost exclusively during this section.
         </p>
