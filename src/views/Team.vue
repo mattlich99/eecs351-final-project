@@ -31,7 +31,9 @@ export default {
   components: {
     Profile
   },
-
+  metaInfo: {
+    title: 'Student Team'
+  },
   data: () => ({
     people: [
       {

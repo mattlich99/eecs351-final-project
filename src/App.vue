@@ -17,12 +17,16 @@
 <script>
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
+require('./assets/ECEHeader.png')
 
 export default {
-  metaInfo() {
-    return {
-      title: 'EECS 351 Final Project | Drum Isolation'
-    }
+  metaInfo: {
+    title: 'EECS 351 Final Project | Drum Component Identification',
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    titleTemplate: '%s | Drum Component Identification',
+    link: [
+      { rel: 'favicon', href: '../src/assets/images/slide-logos/favicon.ico' }
+    ]
   },
   name: 'App',
 

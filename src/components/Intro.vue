@@ -11,7 +11,8 @@
       source instrument-tracks from a mixed track. This is notoriously
       difficult, and from the main
       <a
-        hre="https://sound.media.mit.edu/Papers/kdm-phdthesis.pdf"
+        style="text-decoration: none"
+        href="https://sound.media.mit.edu/Papers/kdm-phdthesis.pdf"
         target="_blank"
         >MIT paper</a
       >

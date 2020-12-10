@@ -50,7 +50,8 @@
       <ul>
         <li>
           <a
-            hre="https://sound.media.mit.edu/Papers/kdm-phdthesis.pdf"
+            style="text-decoration: none"
+            href="https://sound.media.mit.edu/Papers/kdm-phdthesis.pdf"
             target="_blank"
             >MIT Audio DSP Report</a
           >
@@ -68,7 +69,13 @@
     </div>
   </v-container>
 </template>
-
+<script>
+export default {
+  metaInfo: {
+    title: 'Archive'
+  }
+}
+</script>
 <style scoped>
 * {
   /* border: 1px solid black; */

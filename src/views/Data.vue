@@ -35,6 +35,9 @@
 
 <script>
 export default {
+  metaInfo: {
+    title: 'More Data'
+  },
   name: 'Data',
   data: () => ({
     modals: [
@@ -54,13 +57,13 @@ export default {
         title: 'Snare Drum Samples',
         name: 'Snare_Sub.jpg',
         text:
-          'A snare drum when played has a low sharp sound. This low sound is represented in the fourier domain by large magnitudes in the lower frequency range, while the sharpness of the sound is represented in the mid range frequencies. This is seen in the plots of different snare drum samples as a large spike at low frequencies and with a wide range of small magnitudes throughout the mid frequency range entering into the high frequency range.  '
+          ' As we can see in the snare drum samples above, there are some key characteristics to the snare drum that we used in our identification algorithms to differentiate it from the other drum components: a high magnitude initial pulse; most of the frequency in the mid-range from about 250Hz-400Hz; and small magnitude frequencies extending from about 900Hz-3kHz (called "wire" frequencies, resulting from the lingering vibration of the wires that hold the snare together).  '
       },
       {
         title: 'Averaged Snare Drum Reference Sample',
         name: 'Snare_Average.jpg',
         text:
-          'Taking many different samples of a snare drum and combining them into a single average results in a general representation of what a snare drum sample would look like when plotted in the fourier domain. The average signal maintains the characteristics of the individual plots, notably the large spike visible in the low frequency range, and a smear of various magnitudes in the mid range frequencies and entering into the high frequency range.'
+          'Taking many different samples of a snare drum and combining them into a single average results in a general representation of what a snare drum sample would look like when plotted in the fourier domain. The average signal maintains the characteristics of the individual plots: a high initial pulse, most of the frequency in the mid-range, and lingering frequencies out through the 3kHz range.'
       },
       {
         title: 'High Hat Samples',
@@ -78,13 +81,13 @@ export default {
         title: 'Kick Drum Samples',
         name: 'Kick_Sub.png',
         text:
-          'The Kick Drum is personified by three major characteristics, all of which are displayed in the given samples. Firstly, the bass drum operates on a lower frequency range than any of the other given instruments. Secondly, the magnitude of the kick drum is much higher at the lower frequencies than the other instruments. Lastly, there is less echo than the other drum kit components, meaning that the magnitude of the fast fourier transform of the kick drum is much less at higher frequencies than the other bass drum components. All of these characteristics lead to possible methods of identifying the kick drum, either by its unique shape (average filter) and/or a low pass filter. Each of these methods will be explained in more detail in the later sections.'
+          'The Kick Drum is personified by three major characteristics, all of which are displayed in the given samples. Firstly, the bass drum operates on a lower frequency range than any of the other given instruments. Secondly, the magnitude of the kick drum is much higher at the lower frequencies than the other instruments. Lastly, there is less echo than the other drum kit components, meaning that the magnitude of the fast fourier transform of the kick drum is much less at higher frequencies than the other bass drum components. '
       },
       {
         title: 'Averaged Kick Drum Reference Sample',
         name: 'Kick_Average.png',
         text:
-          ' As the viewer can see, we expect the magnitude of the bass drum to be larger. Therefore, we now know that the averaging algorithm may not give us exact expected results when placed in the match filter. Specifically for the bass drum comes the question of how useful is an average filter when identifying this instrument. Since the bass drum is characterized by a large impulse at low frequencies, we can put our test signal through a low pass filter and see if the signal passes through a threshold. In our implementation of the algorithm, we will explore using a low pass filter on the average filter result. '
+          ' When we average all the kick drum samples into a single reference signal, we get a decent representation of what any kick drum may look like. The averaged signal maintains the characteristics of the kick drum: most notably the large, low frequency initial magnitude - which is much larger than the magnitudes of the other 3 drum components - along with a rapid decay into a low magnitude signal for  the rest of the frequency range. '
       },
       {
         title: 'Cymbal Samples',

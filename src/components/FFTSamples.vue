@@ -20,7 +20,7 @@
           there are some key characteristics to the snare drum that we used in
           our identification algorithms to differentiate it from the other drum
           components: a high magnitude initial pulse; most of the frequency in
-          the mid-range from about 250Hz-4ooHz; and small magnitude frequencies
+          the mid-range from about 250Hz-400Hz; and small magnitude frequencies
           extending from about 900Hz-3kHz (called "wire" frequencies, resulting
           from the lingering vibration of the wires that hold the snare
           together).

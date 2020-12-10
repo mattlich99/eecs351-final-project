@@ -8,3 +8,12 @@
     </div>
   </v-container>
 </template>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'Page not found | Drum Component Identification'
+    // if no subcomponents specify a metaInfo.title, this title will be used
+  }
+}
+</script>
