@@ -3,13 +3,13 @@
     <v-row no-gutters class="text-h6 font-weight-bold"
       >Producing Averaged Reference Signal</v-row
     >
-    <v-row justify="center"
+    <v-row
       ><v-col
-        cols="9"
+        cols="12"
         lg="6"
-        class="d-flex justify-center flex-column align-center"
+        class="d-flex justify-center flex-column align-start"
       >
-        <div class="mt-5" style="font-size: 17px">
+        <div class="mt-5 text-justify" style="font-size: 17px">
           <p>
             The following plot is the averaged snare drum reference sample,
             created from the 8 samples plotted above. The function that created
@@ -40,16 +40,15 @@
           algorithms employed below.
         </div> </v-col
       ><v-col class="d-flex flex-column align-center align-lg-end">
-        <v-img
-          max-width="500px"
-          class="flex-grow-0"
-          src="../assets/Snare_Average.jpg"
-        ></v-img>
-        <div
-          class="text-center text-lg-left"
-          style="width: 80%; font-size: 14px"
-        >
-          <i> Figure 2: Averaged Snare Drum Reference Sample </i>
+        <div>
+          <v-img
+            :max-width="imgWidth"
+            class="flex-grow-0"
+            src="../assets/Snare_Average.jpg"
+          ></v-img>
+          <div class="text-center" style="font-size: 14px">
+            <i> Figure 2: Averaged Snare Drum Reference Sample </i>
+          </div>
         </div>
       </v-col></v-row
     >
@@ -60,7 +59,20 @@
 export default {
   data: () => ({
     dialog: false
-  })
+  }),
+  computed: {
+    imgWidth() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return '300px'
+        case 'sm':
+          return '400px'
+
+        default:
+          return '500px'
+      }
+    }
+  }
 }
 </script>
 

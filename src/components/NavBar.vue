@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div class="d-flex align-center">
-      <router-link to="/">
+      <a href="https://eecs351-final-project.web.app/">
         <div class="d-flex">
           <v-img
             alt="Drums Logo"
@@ -17,7 +17,7 @@
             </div>
           </div>
         </div>
-      </router-link>
+      </a>
 
       <v-spacer></v-spacer>
       <v-menu open-on-click bottom offset-y>
@@ -46,22 +46,40 @@
         </v-list>
       </v-menu>
 
-      <v-btn text to="/data" class="hidden-md-and-down">
+      <v-btn
+        text
+        to="/data"
+        class="hidden-md-and-down"
+        :ripple="false"
+        @click.native="scrollToTop"
+      >
         <span>More Data</span>
       </v-btn>
       <a
         href="https://drive.google.com/file/d/14S-Mbrtf1KDl4rEL7fcUKQaQLkugka1t/view?usp=sharing"
         target="_blank"
       >
-        <v-btn text class="hidden-md-and-down">
+        <v-btn text class="hidden-md-and-down" :ripple="false">
           <span>Code</span>
         </v-btn></a
       >
-      <v-btn text to="/team" class="hidden-md-and-down">
+      <v-btn
+        text
+        to="/team"
+        class="hidden-md-and-down"
+        :ripple="false"
+        @click.native="scrollToTop"
+      >
         <span>Our Team</span>
       </v-btn>
 
-      <v-btn text to="/archive" class="hidden-md-and-down">
+      <v-btn
+        text
+        to="/archive"
+        class="hidden-md-and-down"
+        :ripple="false"
+        @click.native="scrollToTop"
+      >
         <span>Archive</span>
       </v-btn>
 
@@ -84,7 +102,7 @@
             <v-list-item-title>Project Overview</v-list-item-title>
           </v-list-item>
           <v-list-item to="/data">
-            <v-list-item-title>Data</v-list-item-title>
+            <v-list-item-title> More Data</v-list-item-title>
           </v-list-item>
           <a
             href="https://drive.google.com/file/d/14S-Mbrtf1KDl4rEL7fcUKQaQLkugka1t/view?usp=sharing"
@@ -96,7 +114,7 @@
             </v-list-item></a
           >
           <v-list-item to="/team">
-            <v-list-item-title>Team</v-list-item-title>
+            <v-list-item-title>Our Team</v-list-item-title>
           </v-list-item>
           <v-list-item to="/archive">
             <v-list-item-title>Archive</v-list-item-title>
@@ -120,7 +138,7 @@ export default {
     ]
   }),
   methods: {
-    scrollTo() {
+    scrollToTop() {
       smoothscroll.polyfill()
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }

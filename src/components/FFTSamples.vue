@@ -3,18 +3,18 @@
     <v-row no-gutters class="text-h6 font-weight-bold"
       >Gathering Signals in the Fourier Domain</v-row
     >
-    <v-row justify="center"
+    <v-row
       ><v-col
-        cols="9"
+        cols="12"
         lg="6"
-        class="d-flex justify-stretch flex-column align-lg-start align-center"
+        class="d-flex justify-center flex-column align-start"
       >
-        <div class="mt-6 text-justify" style="font-size: 17px">
+        <div class="mt-5 text-justify" style="font-size: 17px">
           As mentioned above, we first started by choosing 4 components of the
           drum kit and used the FFT to view them in the frequency domain, as
-          seen to the right with the snare drum's data (for the rest of the
-          report, we will be referencing the snare data for brevity; if you'd
-          like to see data for the other 3 instruments, please visit the
+          seen to the following plot with the snare drum's data (for the rest of
+          the report, we will be referencing the snare data for brevity; if
+          you'd like to see data for the other 3 instruments, please visit the
           <router-link to="/data"> More Data</router-link> page, where the snare
           data is present as well). As we can see in the following subplot,
           there are some key characteristics to the snare drum that we used in
@@ -34,16 +34,12 @@
         >
           What is FFT?
         </v-btn></v-col
-      ><v-col class="d-flex justify-center justify-lg-end"
+      ><v-col
         ><div class="d-flex flex-column align-center align-lg-end">
-          <v-img max-width="500px" src="../assets/Snare_Sub.jpg"></v-img>
-          <div
-            class="text-center text-lg-left"
-            style="width: 88%; font-size: 14px"
-          >
+          <v-img :max-width="imgWidth" src="../assets/Snare_Sub.jpg"></v-img>
+          <div class="text-center" style="font-size: 14px">
             <i>
-              Figure 1: Magnitude FFTs vs. Snare Drum Frequency using eight
-              different samples.</i
+              Figure 1: Snare Drum Magnitude FFTs vs. Snare Drum Frequency.</i
             >
           </div>
         </div></v-col
@@ -93,7 +89,20 @@
 export default {
   data: () => ({
     dialog: false
-  })
+  }),
+  computed: {
+    imgWidth() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return '300px'
+        case 'sm':
+          return '400px'
+
+        default:
+          return '500px'
+      }
+    }
+  }
 }
 </script>
 

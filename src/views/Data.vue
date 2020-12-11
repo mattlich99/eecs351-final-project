@@ -24,9 +24,9 @@
       </v-col>
     </v-row>
     <h1 class="mt-5 text-decoration-underline">Full Cross Correlation Data</h1>
-    <v-row no-gutters class="mt-6"
+    <v-row no-gutters class="mt-6 justify-center justify-lg-start"
       ><v-img
-        max-width="900px"
+        :max-width="correlationWidth"
         src="../assets/fullCrossCorrelation.jpg"
       ></v-img>
     </v-row>
@@ -35,9 +35,6 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'More Data'
-  },
   name: 'Data',
   data: () => ({
     modals: [
@@ -103,6 +100,10 @@ export default {
       }
     ]
   }),
+
+  metaInfo: {
+    title: 'More Data'
+  },
   computed: {
     ImageWidth() {
       switch (this.$vuetify.breakpoint.name) {
@@ -113,6 +114,19 @@ export default {
 
         default:
           return '500px'
+      }
+    },
+    correlationWidth() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return '310px'
+        case 'sm':
+          return '550px'
+        case 'md':
+          return '750px'
+
+        default:
+          return '900px'
       }
     }
   }

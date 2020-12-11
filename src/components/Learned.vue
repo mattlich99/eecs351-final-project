@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-justify">
     <p>
       Throughout this project we as a whole have learned a great deal about how
       difficult it can be to create something from nothing but a theory. In

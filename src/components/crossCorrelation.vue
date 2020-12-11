@@ -42,10 +42,13 @@
     >
     <v-row
       no-gutters
-      class="d-flex justify-lg-space-between justify-lg-center mt-5 mb-6"
+      class="d-flex justify-lg-space-between justify-center mt-5 mb-6"
     >
-      <div>
-        <v-img max-width="500px" src="../assets/CrossCorrelation1.png"></v-img>
+      <div class="mb-6 mb-lg-0 d-flex align-center flex-column">
+        <v-img
+          :max-width="imgWidth"
+          src="../assets/CrossCorrelation1.png"
+        ></v-img>
         <div
           class="text-center text-lg-left mt-2"
           style="width: 88%; font-size: 14px"
@@ -53,10 +56,10 @@
           <i> Figure 4: Cross Correlation of two Crash Cympbals.</i>
         </div>
       </div>
-      <div>
+      <div class="d-flex align-center flex-column">
         <v-img
           class="flex-grow-0"
-          max-width="500px"
+          :max-width="imgWidth"
           src="../assets/CrossCorrelation2.png"
         ></v-img>
         <div
@@ -89,7 +92,20 @@
 export default {
   data: () => ({
     dialog: false
-  })
+  }),
+  computed: {
+    imgWidth() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return '300px'
+        case 'sm':
+          return '400px'
+
+        default:
+          return '500px'
+      }
+    }
+  }
 }
 </script>
 

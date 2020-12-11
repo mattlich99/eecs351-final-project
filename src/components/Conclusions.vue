@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-justify">
     <p>
       All in all, we were able to identify drum kit components from a drum stem
       track with reasonable accuracy. By utilizing digital signal processing
